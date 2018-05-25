@@ -1,0 +1,12 @@
+{
+  "name": "Lambdas project",
+  "version": "0.01",
+  "description": "",
+  "private": true,
+  "scripts": {
+
+  },
+  "dependencies": {
+    "time": "~0.12.0"
+  }
+}
