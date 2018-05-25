@@ -3,7 +3,7 @@ phases:
   install:
     commands:
       - npm install time
-      - aws cloudformation package --template-file template.yml --s3-bucket codepipeline-us-east-1-299424431746
+      - aws cloudformation package --template-file template.yml --s3-bucket arn:aws:s3:::codepipeline-us-east-1-299424431746
                                    --output-template-file outputSamTemplate.yaml
 artifacts:
   type: zip
