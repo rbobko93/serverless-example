@@ -9,7 +9,6 @@ Resources:
       CodeUri: ./
       Events:
          MyTimeApi:
-           Type: Api
-           Properties:
-           Path: /TimeResource
-           Method: GET
+            Type: Api
+            Path: /TimeResource
+            Method: GET
