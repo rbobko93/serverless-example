@@ -1,11 +1,9 @@
 {
-  "name": "Lambdas project",
-  "version": "0.01",
+  "name": "Lambdas-project",
+  "version": "0.1.0",
   "description": "",
   "private": true,
-  "scripts": {
-
-  },
+  "scripts": {},
   "dependencies": {
     "time": "~0.12.0"
   }
