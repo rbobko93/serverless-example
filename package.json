@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "compile": "node ./node_modules/typescript/bin/tsc -p ./ --outDir target"
+    "compile": "node ./node_modules/typescript/bin/tsc"
   },
   "devDependencies": {
     "@types/aws-lambda": "~8.10.5",
