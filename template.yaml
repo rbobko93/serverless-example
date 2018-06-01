@@ -6,7 +6,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: time.getTime
-      Runtime: nodejs8.11
+      Runtime: nodejs8.10
       CodeUri: ./target/src/time
       Events:
         MyTimeApi:
