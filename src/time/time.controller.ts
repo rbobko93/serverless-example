@@ -1,5 +1,5 @@
 import {TimeService} from "./time.service";
-import {Context} from "aws-lambda";
+import {APIGatewayProxyCallback, Context, Handler} from "aws-lambda";
 
 export class TimeController {
 
@@ -9,7 +9,16 @@ export class TimeController {
         this.timeService = service;
     }
 
-    public getTime(event: any, context: Context): Promise<any>  {
-        return this.timeService.getTime();
+    public getTime (event: any, context: Context, callback: APIGatewayProxyCallback): void {
+        this.timeService.getTime()
+            .then( result => {
+               return callback(null, {
+                   statusCode: 200,
+                   body: result.toString()
+               });
+            })
+            .catch( error => {
+
+            });
     }
 }
