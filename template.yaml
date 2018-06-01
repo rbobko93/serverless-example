@@ -5,9 +5,9 @@ Resources:
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: TimeLambda.handler
-      Runtime: nodejs6.10
-      CodeUri: ./target/time-lambda
+      Handler: time.getTime
+      Runtime: nodejs8.10
+      CodeUri: ./target/time
       Events:
         MyTimeApi:
           Type: Api
