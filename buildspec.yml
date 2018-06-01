@@ -2,10 +2,21 @@ version: 0.1
 phases:
   install:
     commands:
+      - echo Installing dependencies.
       - npm install
+      - echo Dependencies install done.
+  pre-build:
+    commands:
+      - echo Running unit test.
+      - npm run test
+      - echo Unit tests passed. Compiling typescript.
       - npm run compile
+      - echo Compiling done.
+  build:
+    commands:
+      - echo Packaging SAM template.
       - aws cloudformation package --template-file template.yaml --s3-bucket codepipeline-bucket-3
-                                   --output-template-file outputSamTemplate.yaml
+                                         --output-template-file outputSamTemplate.yaml
 artifacts:
   type: zip
   files:
