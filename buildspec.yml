@@ -5,7 +5,7 @@ phases:
       - echo Installing dependencies.
       - npm install
       - echo Dependencies install done.
-  pre-build:
+  pre_build:
     commands:
       - echo Running unit test.
       - npm run test
