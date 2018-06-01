@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: time.getTime
       Runtime: nodejs8.11
-      CodeUri: ./target/time
+      CodeUri: ./target/src/time
       Events:
         MyTimeApi:
           Type: Api
