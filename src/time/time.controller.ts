@@ -1,5 +1,5 @@
 import {TimeService} from "./time.service";
-import {APIGatewayProxyCallback, Context, Handler} from "aws-lambda";
+import {APIGatewayProxyCallback, Context} from "aws-lambda";
 
 export class TimeController {
 

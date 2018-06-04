@@ -3,7 +3,8 @@ import {instance, mock, reset, when} from "ts-mockito";
 import {TimeService} from "../../src/time/time.service";
 import {should} from "chai-as-promised";
 import {expect} from "chai";
-import {Context} from "aws-lambda";
+import {getHandlerResponse} from "../response-mapper";
+import {ApiResponseParsed} from "../test.interfaces";
 
 describe("", () => {
     const timeServiceMock: TimeService = mock(TimeService);
@@ -15,12 +16,11 @@ describe("", () => {
        timeController = new TimeController(timeServiceInstance);
     });
 
-    it("", () => {
+    it("", async () => {
         when(timeServiceMock.getTime()).thenResolve('5');
 
-        return timeController.getTime(null, <Context> {})
-            .then((result) => {
-                expect(result).to.equal('5');
-            })
+        const response: ApiResponseParsed<string> = await getHandlerResponse<string>(timeController.getTime);
+
+        expect(response.parsedBody).to.equal('5');
     });
 });
