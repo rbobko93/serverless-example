@@ -11,9 +11,9 @@ describe("", () => {
     let timeController: TimeController;
 
     beforeEach(() => {
-       reset(timeServiceMock);
-       const timeServiceInstance: TimeService = instance(timeServiceMock);
-       timeController = new TimeController(timeServiceInstance);
+        reset(timeServiceMock);
+        let timeServiceInstance: TimeService = instance(timeServiceMock);
+        timeController = new TimeController(timeServiceInstance);
     });
 
     it("", async () => {
@@ -21,6 +21,6 @@ describe("", () => {
 
         const response: ApiResponseParsed<string> = await getHandlerResponse<string>(timeController.getTime);
 
-        expect(response.parsedBody).to.equal('5');
+        expect(response.body).to.equal('5');
     });
 });
